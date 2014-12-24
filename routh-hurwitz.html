@@ -112,8 +112,9 @@ else:
 this_sign = ""
 for i in range(len(r)):
 	if last_sign != "" and this_sign != "":
-		print "System is unstable"
-		break
+		if this_sign != last_sign:
+			print "System is unstable"
+			break
 	last_sign = this_sign
 	if r[i][0] > 0:
 		 this_sign = "plus"
