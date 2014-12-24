@@ -97,11 +97,28 @@ for j in range(2, len(coefficients)):
         else:
             result = numerator/denominator
             if result == 0 and approximate_mode == True: 
-				result = 10**(-100)
+				result = 10**(-100) 
                 
         row.append(result)
     r.append(row + padding)
 
+# super clumsy routine to see if the system is unstable
+if r[0][0] > 0:
+	last_sign = "plus"
+elif r[0][0] < 0:
+	last_sign = "minus"
+else:
+	last_sign = ""
+this_sign = ""
+for i in range(len(r)):
+	if last_sign != "" and this_sign != "":
+		print "System is unstable"
+		break
+	last_sign = this_sign
+	if r[i][0] > 0:
+		 this_sign = "plus"
+	elif r[i][0] < 0:
+		this_sign = "minus"
 	
 # print the created routh-hurwitz table
 table = "<table>"
