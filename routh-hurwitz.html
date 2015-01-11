@@ -42,14 +42,21 @@ make it able to do symbolic calculations (note: skulpt is python v. 2.6 and eval
 <body> 
 <h3>Numerical Routh-Hurwitz Criterion Calculator</h3> 
 
-<textarea id="input" cols="60" rows="3">
-coefficients = [1,12,4,2,8]
-significant_figures = 4
-approximate_mode = True</textarea>
+<textarea id="input" cols="60" rows="1">
+coefficients = [1,12,4,2,8]</textarea>
+<br>
+Approximate mode: 
+<input type=radio name='approx' onchange='execute_python();' checked value='True'>On
+<input type=radio name='approx' onchange='execute_python();' value='False'>Off
+<br>
+Significant Figures: 
+<input type=radio name='sigfigs' onchange='execute_python();' value='1'>1
+<input type=radio name='sigfigs' onchange='execute_python();' value='2'>2
+<input type=radio name='sigfigs' onchange='execute_python();' value='3'>3
+<input type=radio name='sigfigs' onchange='execute_python();' checked value='4'>4
 <br/> 
 
 <pre id="output" ></pre> 
-
 
 <div>
 <b>About:</b> <br>
@@ -134,8 +141,6 @@ print table + "</table>"
 
 </textarea>
 
-
-
 </body>
 
 <script type="text/javascript"> 
@@ -151,17 +156,19 @@ print table + "</table>"
 
 	// executes python code in "input" and "python_code" using skulpt
 	function execute_python() { 
-	   var prog = document.getElementById("input").value; 
-	   prog += "\n" + document.getElementById("python_code").value;
+		var prog = document.getElementById("input").value; 
+		prog += "\n" + "approximate_mode = " + $('input[name="approx"]:checked').val();
+		prog += "\n" + "significant_figures = " + $('input[name="sigfigs"]:checked').val();
+	    prog += "\n" + document.getElementById("python_code").value;
 	   
-	   var mypre = document.getElementById("output"); 
-	   mypre.innerHTML = ''; 
-	   Sk.pre = "output";
-	   Sk.configure({output:outf, read:builtinRead}); 
-	   try {
-		  eval(Sk.importMainWithBody("<stdin>",false,prog)); 
-	   }
-	   catch(e) {
+	    var mypre = document.getElementById("output"); 
+	    mypre.innerHTML = ''; 
+	    Sk.pre = "output";
+	    Sk.configure({output:outf, read:builtinRead}); 
+	    try {
+		   eval(Sk.importMainWithBody("<stdin>",false,prog)); 
+	    }
+	    catch(e) {
 			var mypre = document.getElementById("output"); 
 			mypre.innerHTML = mypre.innerHTML + e.toString();        
 		}
