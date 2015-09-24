@@ -28,11 +28,11 @@ section {
     padding: 10px;
 }
 div#left {
-    width: 50%;
+    width: 60%;
     float: left;
 }
 div#right {
-    margin-left: 50%;
+    margin-left: 40%;
     padding: 10px;
 }
 
