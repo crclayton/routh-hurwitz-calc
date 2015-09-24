@@ -63,7 +63,7 @@ padding = [0]*20
 
 # show the user the polynomial
 s = [str(a) + "s&lt;sup&gt;" + str(i) + "&lt;/sup&gt;" for i, a in enumerate(coefficients[::-1])]
-print "characteristic equation: " + " + ".join(s[::-1]) + "\n"
+print "characteristic equation: \n   " + " + ".join(s[::-1]) + "\n"
 
 # create the top two rows
 r.append(coefficients[::2] + padding)
