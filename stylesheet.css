@@ -1,24 +1,46 @@
-
-table{
-	text-align: right;
+  @import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Alegreya);
+  
+h1,h2,h3{
+    font-family: 'Raleway';
 }
 
-td{
-	padding-right: 20px;
-	overflow:hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
-div{
-	font-size: 15px;
-}
-
-#python_code{
-	display:none;
+p{
+font-family: 'Alegreya', serif;
 }
 
 .CodeMirror {
-  border: 1px solid #eee;
-  height: auto;
+	 border: 1px solid #eee;
+	 height: auto;
+}
+
+#output{
+    border: 1px solid #eee;
+    padding: 5px;
+}
+
+.CodeMirror-scroll {
+	 height: auto;
+}
+
+section {
+    margin: auto;
+    padding: 10px;
+}
+div#left {
+    width: 50%;
+    float: left;
+}
+div#right {
+    margin-left: 50%;
+    padding: 10px;
+}
+
+#python_code{
+    display:none;
+}
+
+code{
+    font-weight:bold;
+    font-size:14px;
 }

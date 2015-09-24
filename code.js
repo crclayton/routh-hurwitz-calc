@@ -1,7 +1,6 @@
 
 var editor = CodeMirror.fromTextArea(document.getElementById("input"), {
-	lineNumbers: true,
-	viewportMargin: Infinity
+	lineNumbers: true
 });
 // execute the placeholder input 
 $(document).ready(function () {
