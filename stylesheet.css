@@ -1,0 +1,24 @@
+
+table{
+	text-align: right;
+}
+
+td{
+	padding-right: 20px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+div{
+	font-size: 15px;
+}
+
+#python_code{
+	display:none;
+}
+
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+}
