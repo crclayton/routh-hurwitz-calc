@@ -1,10 +1,5 @@
-routh-hurwitz-calc
-==================
+#Routh-Hurwitz Calculator
 
-An analysis tool for evaluating the stability of a Linear-Time-Invariant(LTI) system.
-This tool is most useful in the field of control systems design.
+A tool for evaluating the stability of a Linear-Time-Invariant (LTI) system. It can be used online [**here**](http://crclayton.com/projects/routhhurwitz/index.html).
 
-The current version can evaluate a numerical LTI system with no variables.
-In the next iteration we will allow for a proportional gain variable k.
-
-This project uses an exciting library for in-browser use of python: <a href = "http://www.skulpt.org/">skulpt.js</a>
+This project uses [skulpt](http://www.skulpt.org/), an in-browser implementation of Python.
